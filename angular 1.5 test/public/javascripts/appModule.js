@@ -1,13 +1,12 @@
-﻿(function () {
-    "use strict";
-    angular.module('todoApp', ["ngRoute"])
-        .config(function ($routeProvider) {
-            $routeProvider
-                .when("/", {
-                    templateUrl: "/routes/main.html"
-                })
-                .when("/red", {
-                    templateUrl: "/routes/red.html"
-                })
-        });
-})()
+﻿angular.module('todoApp', ['ui.router'])
+    .config(['$stateProvider', function($stateProvider) {
+        $stateProvider
+            .state('main', {
+                url: "",
+                templateUrl: "/routes/main.html"
+            })
+            .state("red", {
+                url: "/red",
+                templateUrl: "/routes/red.html"
+            })
+    }]);

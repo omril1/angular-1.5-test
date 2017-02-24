@@ -5,27 +5,29 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js" integrity="sha256-r1+cTccsZWuMsEacDDz3zmLoa4bJcLUlZk+W21C0Eoo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular-route.js" integrity="sha256-2fOqDgXozkgFR+hsTU5mWSxTl6NzkzAwczICy/tjBv0=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/i18n/angular-locale_he-il.js" integrity="sha256-P93ybtMkZ6lbtUT4NJhDEQ3xf/t0A6Sh1wt0do5JbB0=" crossorigin="anonymous"></script>
-    <script src="javascripts/appModule.js"></script>
-    <script src="javascripts/GlobalController.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular-route.js" integrity="sha256-2fOqDgXozkgFR+hsTU5mWSxTl6NzkzAwczICy/tjBv0=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js" integrity="sha256-e5SbGNdhJYKT++Es27SB9lEsr+fJMcJQtQ0YsOenJr4=" crossorigin="anonymous"></script>
+    <!-- <script src="javascripts/appModule.js"></script> -->
+    <!-- <script src="javascripts/GlobalController.js"></script> -->
     <link href="stylesheets/style.css" rel="stylesheet" />
     <title>asd</title>
 </head>
-<body>
+<body ng-controller="GlobalController as global">
     <header>
         <nav>
             <ul>
-                <li><a href="#/">Main</a></li>
-                <li><a href="#red">Red</a></li>
-                <li><a href="#green">Green</a></li>
-                <li><a href="#blue">Blue</a></li>
+                <li><a ui-sref="main">Main</a></li>
+                <li><a ui-sref="red">Red</a></li>
+                <li><a ui-sref="green">Green</a></li>
+                <li><a ui-sref="blue">Blue</a></li>
             </ul>
         </nav>
+            {{global.hello}}
     </header>
     <h2>Todo</h2>
-    <div ng-controller="GlobalController as global">
-        <ng-view></ng-view>
+    <div>
+        <ui-view></ui-view>
     </div>
+    <script src="build/app.js" charset="utf-8"></script>
 </body>
 </html>
