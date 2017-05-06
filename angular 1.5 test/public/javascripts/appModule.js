@@ -1,4 +1,4 @@
-﻿angular.module('todoApp', ['ui.router'])
+﻿angular.module('todoApp', ['ui.router', 'ngAnimate'])
     .config(['$stateProvider', function($stateProvider) {
         $stateProvider
             .state('main', {
@@ -8,5 +8,13 @@
             .state("red", {
                 url: "/red",
                 templateUrl: "/routes/red.html"
+            })
+            .state("green", {
+                url: "/green",
+                templateUrl: "/routes/green.html"
+            })
+            .state("blue", {
+                url: "/blue",
+                templateUrl: "/routes/blue.html"
             })
     }]);

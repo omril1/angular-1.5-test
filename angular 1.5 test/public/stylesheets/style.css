@@ -16,3 +16,41 @@ a {
   text-decoration: line-through;
   color: #808080;
 }
+.view-wrapper {
+  position: relative;
+  width: 100%;
+}
+.view-holder.ng-animate {
+  width: 100%;
+  transition: all ease .5s;
+  position: absolute;
+}
+.view-holder.ng-enter {
+  top: 200px;
+  opacity: 0;
+}
+.view-holder.ng-leave,
+.view-holder.ng-enter.ng-enter-active {
+  top: 0;
+  opacity: 1;
+}
+.view-holder.ng-leave.ng-leave-active {
+  top: -200px;
+  opacity: 0;
+}
+.view-holder > div {
+  min-width: 100%;
+  min-height: 250px;
+}
+.view-holder > .main {
+  background: rgb(255, 255, 200);
+}
+.view-holder > .red {
+  background-color: #faa;
+}
+.view-holder > .green {
+  background-color: #afa;
+}
+.view-holder > .blue {
+  background-color: #aaf;
+}

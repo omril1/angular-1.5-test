@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
+import babel from 'gulp-babel';
 import imagemin from 'gulp-imagemin';
 import sourcemaps from 'gulp-sourcemaps';
 import browserSyncModule from 'browser-sync';
@@ -20,6 +21,7 @@ gulp.task('scripts', function() {
     browserSync.reload();
     return gulp.src(paths.scripts[0])
         .pipe(sourcemaps.init())
+        // .pipe(babel({presets: ['es2015']}))
         .pipe(uglify())
         .pipe(concat('app.js'))
         .pipe(sourcemaps.write())

@@ -1,4 +1,4 @@
-﻿angular.module('todoApp').controller('GlobalController', function() {
+angular.module('todoApp').controller('GlobalController', function() {
     var global = this;
-    global.hello = "world";
+    global.hello = "hello world!";
 });
